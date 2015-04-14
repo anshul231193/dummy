@@ -20,9 +20,12 @@ public class MainActivity extends ActionBarActivity {
 	TextView error;
 	Button btn,reg;
 	
-	public void onBackPressed()
-	{
-	}
+	public void onBackPressed() {
+		   Intent intent = new Intent(Intent.ACTION_MAIN);
+		   intent.addCategory(Intent.CATEGORY_HOME);
+		   intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		   startActivity(intent);
+		 }
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,9 +68,11 @@ public class MainActivity extends ActionBarActivity {
 						}
 						else if(uname.getText().toString().equals(username) && pswd.getText().toString().equals(pass) && type.equals("Doctor")) 
 						{
+							break;
 						}
-						else if(uname.getText().toString().equals(username) && pswd.getText().toString().equals(pass) && type.equals("Admin")) 
+						else if(uname.getText().toString().equals("admin") && pswd.getText().toString().equals("admin")) 
 						{
+							break;
 						}
 					}while(res.moveToNext());
 				}

@@ -48,7 +48,8 @@ public class Register extends Activity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-			
+				SQLiteDatabase db = openOrCreateDatabase("MMS", MODE_PRIVATE, null);;
+				db.execSQL("CREATE TABLE IF NOT EXISTS Login(Patient_id INT AUTO_INCREMENT,Username VARCHAR,Password VARCHAR,F_Name VARCHAR,B_Date VARCHAR,Address VARCHAR,Contact_no VARCHAR,Email VARCHAR,Reg_Date VARCHAR,Login_Type VARCHAR);");
 					if(validate(b_date.getText().toString(),con.getText().toString(),email.getText().toString(),f_name.getText().toString(),add.getText().toString(),uname.getText().toString(),pswd.getText().toString()) == true)
 					{
 						Log.d(""+i, "count");
@@ -57,8 +58,7 @@ public class Register extends Activity{
 						SimpleDateFormat ft = new SimpleDateFormat("dd/MM/yyyy");
 						String date = ft.format(d)+"";
 						Log.d("B","B");
-						SQLiteDatabase db = openOrCreateDatabase("MMS", MODE_PRIVATE, null);
-						db.execSQL("CREATE TABLE IF NOT EXISTS Login(Patient_id INT AUTO_INCREMENT,Username VARCHAR,Password VARCHAR,F_Name VARCHAR,B_Date VARCHAR,Address VARCHAR,Contact_no VARCHAR,Email VARCHAR,Reg_Date VARCHAR,Login_Type VARCHAR);");
+					    db = openOrCreateDatabase("MMS", MODE_PRIVATE, null);
 						Log.d("C","C");
 						Cursor res = db.rawQuery("SELECT * FROM Login", null);
 						while(res.moveToNext())

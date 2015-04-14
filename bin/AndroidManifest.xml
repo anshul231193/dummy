@@ -26,6 +26,10 @@
         <activity android:name=".Register"></activity>
         <activity android:name=".Feedback"></activity>
         <activity android:name=".Update"></activity>
+        <activity android:name=".Records"></activity>
+        <activity android:name=".Book_app"></activity>
+        <activity android:name=".SelectDoctor"></activity>
+        <activity android:name=".Check"></activity>
     </application>
 
 </manifest>

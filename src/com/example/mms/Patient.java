@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class Patient extends Activity{
 	
 	TextView label;
-	Button feedback,logout,update;
+	Button feedback,logout,update,records,book,check;
 	String id;
 	
 	public void onBackPressed()
@@ -35,6 +35,20 @@ public class Patient extends Activity{
 		feedback = (Button)findViewById(R.id.button1);
 		logout = (Button)findViewById(R.id.button2);
 		update = (Button)findViewById(R.id.button3);
+		records = (Button)findViewById(R.id.button6);
+		book = (Button)findViewById(R.id.button4);
+		check = (Button)findViewById(R.id.button5);
+		
+		check.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(getApplicationContext(),Check.class);
+				i.putExtra("id", id);
+				startActivity(i);
+			}
+		});
 		
 		logout.setOnClickListener(new OnClickListener() {
 			
@@ -67,6 +81,29 @@ public class Patient extends Activity{
 				startActivity(i1);
 			}
 		});
+		
+		records.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i2 = new Intent(getApplicationContext(),Records.class);
+				i2.putExtra("id", id);
+				startActivity(i2);
+			}
+		});
+		
+		book.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent i3 = new Intent(getApplicationContext(),Book_app.class);
+				i3.putExtra("id", id);
+				startActivity(i3);
+			}
+		});
+		
 	}
 
 }
