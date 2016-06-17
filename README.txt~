@@ -1,0 +1,11 @@
+This is a dummy project.
+Sup.
+blahblah
+<<<<<<< HEAD
+moreblahblah
+Feature 2
+Feature 2 changes
+=======
+Fixing Bugs
+Another Fix to bug1234
+>>>>>>> bug1234
